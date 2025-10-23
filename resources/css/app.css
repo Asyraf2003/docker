@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset dasar bila preflight tidak ter-load dengan baik */
+@layer base {
+  html, body { @apply m-0 p-0; }
+}
+
+/* Utilities tambahan proyek */
+@layer utilities {
+  .full-bleed { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); width: 100vw; }
+  [x-cloak] { display: none !important; }
+  .focus-visible\:ring:focus-visible { @apply ring-2 ring-offset-2 ring-sky-500 outline-none; }
+  .fade-soft { @apply transition-opacity duration-700 ease-out; }
+  .sr-only { position: absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  .not-sr-only { position: static; width:auto; height:auto; margin:0; overflow:visible; clip:auto; white-space:normal; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+@layer components {
+  .card-border-effect {
+    padding-bottom: 24px;
+    padding-right: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card-border-effect::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    border-radius: 1rem;
+    transform: translate(0, 0);
+    z-index: -1;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  }
+}
+
+.yellow-text {
+  @apply text-[#986D01] font-semibold;
+}
+
+.bold-text {
+  @apply font-bold text-gray-900 dark:text-gray-100;
+}
+
+.card-border-effect::after {
+    border-color: #374151; 
+}
+
+.dark .card-border-effect::after {
+    border-color: #D1D5DB;  
+}
+
+.card-border-effect:hover::after {
+    border-color: #818CF8; 
+}
+
+
