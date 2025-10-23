@@ -32,6 +32,7 @@ git --version
 
 # 1) Clone repo
 git clone https://github.com/Asyraf2003/docker school-portable
+
 cd school-portable
 
 # 2) Jalankan setup otomatis
