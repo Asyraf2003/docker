@@ -30,10 +30,8 @@ git --version
 
 ## 🚀 Cara Pakai (ambil dari GitHub → jalan)
 
-> Ganti `<REPO_URL>` dengan URL repo GitHub kamu.
-
 # 1) Clone repo
-git clone <REPO_URL> school-portable
+git clone https://github.com/Asyraf2003/docker school-portable
 cd school-portable
 
 # 2) Jalankan setup otomatis
